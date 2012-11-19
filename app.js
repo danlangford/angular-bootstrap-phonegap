@@ -59,3 +59,10 @@ function BeerCounter($scope, $locale) {
         };
     }
 }
+
+// the following manual bootstrapping MAY BE NEEDED
+// and allows us to use Angular with PhoneGap
+// there must be some ready event conflicts between the 2 libs
+//document.addEventListener("deviceready", function() {
+//    angular.bootstrap(document, ['ngView']);
+//}, true);
