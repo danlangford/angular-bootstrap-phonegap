@@ -1,29 +1,56 @@
-<!DOCTYPE html!>
-<html>
-    
-    <head>
-        <link rel="stylesheet" href="libs/bootstrap-2.2.1/css/bootstrap.min.css">
-        <script src="libs/angular-1.0.2.min.js"></script>
-        <script src="app.js"></script>
-    </head>
-    
-    <body>
-        <div ng-app="components">
-            <tabs>
-                <pane title="Localization">Date: {{ '2012-04-01' | date:'fullDate' }}
-                    <br>Currency: {{ 123456 | currency }}
-                    <br>Number: {{ 98765.4321 | number }}
-                    <br>
-                </pane>
-                <pane title="Pluralization">
-                    <div ng-controller="BeerCounter">
-                        <div ng-repeat="beerCount in beers">
-                            <ng-pluralize count="beerCount" when="beerForms"></ng-pluralize>
-                        </div>
-                    </div>
-                </pane>
-            </tabs>
-        </div>
-    </body>
+<!doctype html>
+<html lang="en" ng-app="myApp">
+<head>
 
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Hello World</title>
+
+    <link rel="stylesheet" type="text/css" href="css/app.css"/>                     <!-- NG, PG -->
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">            <!-- BS -->
+    <link rel="stylesheet" type="text/css" href="css/bootstrap-responsive.min.css"> <!-- BS -->
+
+    <!-- Fav and touch icons defined in PhoneGap config -->
+
+</head>
+
+<body>
+
+<ul class="menu">
+    <li><a href="#/view1">view1</a></li>
+    <li><a href="#/view2">view2</a></li>
+</ul>
+
+<div ng-view></div>
+
+<div>Angular seed app: v<span app-version></span></div>
+
+
+<!-- In production use:
+<script type="text/javascript" src="lib/jquery/jquery.min.js"> 'JQ'; </script>
+<script type="text/javascript" src="lib/angular/angular.min.js"> 'NG'; </script>
+<script type="text/javascript" src="lib/bootstrap.min.js"> 'BS'; </script>
+<script type="text/javascript" src="phonegap.js"> 'PG'; </script>
+-->
+
+<!-- in development use: -->
+<script type="text/javascript" src="lib/jquery/jquery.js"> 'JQ'; </script>
+<script type="text/javascript" src="lib/angular/angular.js"> 'NG'; </script>
+<script type="text/javascript" src="lib/bootstrap/bootstrap.js"> 'BS'; </script>
+<script type="text/javascript" src="lib/cordova/cordova.js"> 'PG'; </script>
+<!-- -->
+
+
+<script type="text/javascript" src="js/services.js"> 'NG'; </script>
+<script type="text/javascript" src="js/controllers.js"> 'NG'; </script>
+<script type="text/javascript" src="js/filters.js"> 'NG'; </script>
+<script type="text/javascript" src="js/directives.js"> 'NG'; </script>
+<script type="text/javascript" src="js/app.js"> 'NG'+'PG'; 'last plz!'; </script>
+
+</body>
 </html>
