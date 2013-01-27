@@ -21,15 +21,24 @@
 
 <body>
 
-<ul class="menu">
-    <li><a href="#/phonegap">phonegap</a></li>
-    <li><a href="#/bootstrap">bootstrap</a></li>
-</ul>
+<div class="container">
+
+    <div class="navbar" ng-controller="navCtrl">
+        <div class="navbar-inner">
+            <ul class="nav">
+                <li ng-class="getClass('/phonegap')"><a href="#/phonegap">PhoneGap</a></li>
+                <li ng-class="getClass('/bootstrap')"><a href="#/bootstrap">Bootstrap</a></li>
+            </ul>
+        </div>
+    </div>
+</div> <!-- /.navbar -->
 
 <div ng-view></div>
 
 <div>ng-bs-pg seed app: v<span app-version></span></div>
 
+
+</div> <!-- /.container -->
 
 <!-- In production use: -->
 <script type="text/javascript" src="lib/jquery/jquery.min.js"> 'JQ'; </script>

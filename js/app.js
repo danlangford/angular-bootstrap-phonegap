@@ -1,7 +1,6 @@
 'use strict';
 
 /* NG */
-
 // Declare app level module which depends on filters, and services
 angular.module('myApp', ['myApp.filters', 'myApp.services', 'myApp.directives']).
 
@@ -11,16 +10,17 @@ angular.module('myApp', ['myApp.filters', 'myApp.services', 'myApp.directives'])
 		$routeProvider.otherwise({redirectTo:'/phonegap'});
 	}]).
 
-	run(function ($rootScope) {
-		$rootScope.deviceready = false;
+	run(function ($rootScope, $location) {
+
 		/* PG */
+		$rootScope.deviceready = false;
 		document.addEventListener('deviceready', function () {
 			console.log("Report: deviceready");
 			$rootScope.deviceready = true;
 		}, false);
 		/* /PG */
-	});
 
+	});
 
 
 
